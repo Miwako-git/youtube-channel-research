@@ -1,69 +1,67 @@
-# YouTube 急成長チャンネル発見ツール
+# 🔍 YouTube Growing Channel Finder
 
-キーワード検索で YouTube の急成長チャンネルを自動抽出し、Google スプレッドシートにランキング表示するツールです。
-# YouTube Growing Channel Finder
-Automatically discovers fast-growing YouTube channels using a custom "Buzz Index" metric.
+[日本語](#japanese) | English
+
+Automatically discovers fast-growing YouTube channels using a custom "Buzz Index" metric (avg views ÷ subscribers).  
 Built with Google Apps Script + YouTube Data API v3.
 
-## 特徴
-- 独自指標「バズり指数」（平均再生数 ÷ 登録者数）で急成長チャンネルをスコアリング
-- 運用1年以内・登録者500人以上に絞り込み、ノイズを除去
-- APIキーは ScriptProperties に安全格納（コードに直書きしない設計）
-- Google スプレッドシートのカスタムメニューからワンクリックで起動
-## Features
-- Custom "Buzz Index" (avg views ÷ subscribers) to rank growth potential
-- Filters channels under 1 year old with 500+ subscribers
-- Secure API key storage via ScriptProperties
-- One-click execution from Google Sheets custom menu
+## ✨ Features
 
+- 📊 **Buzz Index** — Custom metric (avg views ÷ subscribers) to rank growth potential
+- 🔎 **Smart filtering** — Channels under 1 year old with 500+ subscribers only
+- 🔒 **Secure API key** — Stored in ScriptProperties, never hardcoded
+- ⚡ **One-click execution** — Run from Google Sheets custom menu
 
+## 🛠 Tech Stack
 
-## 必要なもの
+- Google Apps Script
+- YouTube Data API v3
+- Google Sheets
 
-- Google アカウント
-- YouTube Data API v3 の APIキー（[Google Cloud Console](https://console.cloud.google.com/) で取得）
+## 🚀 Setup
 
-## セットアップ
+1. Open Google Sheets → Extensions → Apps Script
+2. Paste the code and save
+3. Reload the spreadsheet
+4. Run **🔑 API Key Registration** from the menu
+5. Run **▶ Find Growing Channels** and enter a keyword
 
-1. Google スプレッドシートを新規作成
-2. メニューの「拡張機能」→「Apps Script」を開く
-3. `youtube_channel_research.gs` の内容をエディタに貼り付けて保存
-4. スプレッドシートを再読み込みすると「🌌 YouTubeリサーチ」メニューが追加される
-5. 「🔑 APIキー登録」を実行して APIキーを保存
+## 📝 Notes
 
-## 使い方
+- Developed through AI collaboration (vibe coding)
+- Requires a YouTube Data API v3 key ([Google Cloud Console](https://console.cloud.google.com/))
 
-1. 「🌌 YouTubeリサーチ」→「▶ 急成長チャンネル検索」を実行
-2. キーワードを入力（例: `Dark Ambient`、`Study Music`）
-3. 結果が新しいシートに出力される
+---
 
-## 出力項目
+<a id="japanese"></a>
 
-| 項目 | 説明 |
-|------|------|
-| チャンネル名 | チャンネルのタイトル |
-| 運用期間 | チャンネル開設からの日数 |
-| 登録者数 | チャンネル登録者数 |
-| バズり指数🔥 | 平均再生数 ÷ 登録者数（高いほど急成長） |
-| 平均再生数 | 全動画の平均再生数 |
-| 開設日 | チャンネル開設日 |
-| URL | チャンネルへのリンク |
+# 🔍 YouTube急成長チャンネル発見ツール
 
-## パラメータ調整
+独自指標「バズり指数」（平均再生数 ÷ 登録者数）で急成長チャンネルを自動抽出します。  
+Google Apps Script + YouTube Data API v3 で動作します。
 
-`CONFIG` オブジェクトで動作をカスタマイズできます。
+## ✨ 機能
 
-```javascript
-const CONFIG = {
-  MAX_RESULTS: 30,    // 検索結果の最大件数
-  MONTHS_AGO: 12,     // 何ヶ月前までの動画を対象にするか
-  MIN_SUBS: 500,      // 最低登録者数（ノイズ除去）
-  AGE_LIMIT: 1.0,     // チャンネル運用期間の上限（年）
-  INDEX_FLOOR: 1000,  // バズり指数の分母最低値（異常値防止）
-};
-```
+- 📊 **バズり指数** — 平均再生数÷登録者数で成長ポテンシャルをスコアリング
+- 🔎 **絞り込み** — 運用1年以内・登録者500人以上に限定してノイズを除去
+- 🔒 **APIキー安全管理** — ScriptPropertiesに格納、コードに直書きしない設計
+- ⚡ **ワンクリック実行** — スプレッドシートのカスタムメニューから起動
 
-## 注意事項
+## 🛠 使用技術
 
-- YouTube Data API の無料枠には1日あたりのクォータ制限があります
-- APIキーは必ず ScriptProperties に保存し、コードに直接記述しないでください
+- Google Apps Script
+- YouTube Data API v3
+- Google スプレッドシート
+
+## 🚀 セットアップ
+
+1. Google スプレッドシートを開く → 拡張機能 → Apps Script
+2. コードを貼り付けて保存
+3. スプレッドシートを再読み込み
+4. メニューから「🔑 APIキー登録」を実行
+5. 「▶ 急成長チャンネル検索」を実行してキーワードを入力
+
+## 📝 開発メモ
+
+- AIとの協働（バイブコーディング）で開発
+- YouTube Data API v3 のAPIキーが必要です（[Google Cloud Console](https://console.cloud.google.com/)）
