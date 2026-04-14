@@ -9,7 +9,8 @@ Built with Google Apps Script + YouTube Data API v3.
 - 独自指標「バズり指数」（平均再生数 ÷ 登録者数）で急成長チャンネルをスコアリング
 - 運用1年以内・登録者500人以上に絞り込み、ノイズを除去
 - APIキーは ScriptProperties に安全格納（コードに直書きしない設計）
-- Google スプレッドシートのカスタムメニューからワンクリックで起動## Features
+- Google スプレッドシートのカスタムメニューからワンクリックで起動
+## Features
 - Custom "Buzz Index" (avg views ÷ subscribers) to rank growth potential
 - Filters channels under 1 year old with 500+ subscribers
 - Secure API key storage via ScriptProperties
